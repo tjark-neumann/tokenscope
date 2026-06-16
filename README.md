@@ -1,6 +1,6 @@
 # tokenscope
 
-A small tokenizer visualizer. Paste text, pick a model, and see how it splits into tokens — with counts, per-token segments, and token ids.
+A small tokenizer visualizer. Paste text, pick a model, and see how it splits into tokens: with counts, per-token segments, and token ids.
 
 It opens on a Claude tokenizer and also includes OpenAI's encodings, an exact Claude count via the API, and a tiny demo tokenizer.
 

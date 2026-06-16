@@ -34,4 +34,4 @@ Tokenization via [js-tiktoken](https://github.com/dqbd/tiktoken) and [@anthropic
 
 ## License
 
-MIT
+MIT.

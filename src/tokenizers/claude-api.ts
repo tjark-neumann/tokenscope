@@ -3,7 +3,7 @@ import { getApiKey, getModel } from "./settings";
 
 // The only way to get *exact* token counts for current Claude models is the
 // Anthropic count_tokens endpoint. It returns a total (input_tokens), not a
-// per-token breakdown — so this adapter reports a count with no segments.
+// per-token breakdown, so this adapter reports a count with no segments.
 //
 // SECURITY: calling api.anthropic.com directly from a browser requires the
 // `anthropic-dangerous-direct-browser-access` header and exposes your API key to

@@ -1,6 +1,6 @@
 import type { Tokenizer } from "./types";
 
-// The smallest possible adapter — one token per Unicode code point. It exists as
+// The smallest possible adapter, one token per Unicode code point. It exists as
 // a worked example: this is all it takes to add an encoder. Copy this file,
 // change the logic, register it (see index.ts), done.
 

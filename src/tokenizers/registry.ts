@@ -1,7 +1,7 @@
 import type { Tokenizer } from "./types";
 
 // A tiny registry. Tokenizers register themselves (or are registered in index.ts)
-// and the UI reads from here. No framework, no magic — just a Map.
+// and the UI reads from here.
 
 const registry = new Map<string, Tokenizer>();
 

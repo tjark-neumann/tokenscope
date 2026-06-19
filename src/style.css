@@ -1,5 +1,4 @@
 :root {
-  /* cool paper and a single deep teal: an instrument, kept quiet */
   --canvas: #eceff3;
   --panel: #ffffff;
   --ink: #14191f;
@@ -15,8 +14,6 @@
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
 
-  /* token tints: one soft, low saturation family so neighbours differ
-     without the surface turning into a rainbow */
   --t0: #dfe8f3;
   --t1: #e6e2f0;
   --t2: #ddeae3;
@@ -39,7 +36,6 @@ body {
   line-height: 1.55;
 }
 
-/* one centred column, one consistent vertical rhythm */
 #app {
   max-width: 840px;
   margin: 0 auto;
@@ -49,7 +45,7 @@ body {
   gap: 18px;
 }
 
-/* ── header ─────────────────────────────────────────────── */
+/* header */
 .masthead { margin-bottom: 4px; }
 
 .wordmark {
@@ -76,7 +72,7 @@ body {
   max-width: 58ch;
 }
 
-/* ── controls ───────────────────────────────────────────── */
+/* controls */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +143,7 @@ textarea:focus {
   color: #fff;
 }
 
-/* ── settings (only shown for the exact API tokenizer) ──── */
+/* settings (only shown for the exact API tokenizer) */
 .settings {
   display: none;
   flex-wrap: wrap;
@@ -169,7 +165,7 @@ textarea:focus {
   color: var(--warn);
 }
 
-/* ── input ──────────────────────────────────────────────── */
+/* input */
 textarea {
   width: 100%;
   min-height: 156px;
@@ -184,7 +180,7 @@ textarea {
   padding: 16px 18px;
 }
 
-/* ── readout: counts and the status note, grouped ───────── */
+/* readout: counts and the status note, grouped */
 .readout {
   display: flex;
   flex-direction: column;
@@ -245,7 +241,7 @@ textarea {
 }
 .note.error { color: var(--error); }
 
-/* ── token tiles: the signature ─────────────────────────── */
+/* token tiles: the signature */
 .tokens {
   display: flex;
   flex-wrap: wrap;
@@ -285,7 +281,7 @@ textarea {
   color: var(--muted);
 }
 
-/* ── footer ─────────────────────────────────────────────── */
+/* footer */
 footer {
   margin-top: 14px;
   padding-top: 18px;
@@ -297,7 +293,7 @@ footer {
 footer a { color: var(--accent); }
 footer code { font-family: var(--mono); }
 
-/* ── responsive and motion ──────────────────────────────── */
+/* responsive and motion */
 @media (prefers-reduced-motion: no-preference) {
   .stat.primary .num { transition: color 0.15s ease; }
   .seg button { transition: background 0.12s ease, color 0.12s ease; }

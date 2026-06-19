@@ -12,7 +12,7 @@ type View = "text" | "ids";
 let currentId = "anthropic/claude-legacy";
 let view: View = "text";
 
-// ── build the DOM ───────────────────────────────────────────
+// DOM
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
   <header class="masthead">
@@ -97,7 +97,7 @@ modelInput.value = getModel();
 keyInput.addEventListener("input", () => { setApiKey(keyInput.value.trim()); recompute(); });
 modelInput.addEventListener("input", () => { setModel(modelInput.value.trim()); recompute(); });
 
-// ── rendering ───────────────────────────────────────────────
+// rendering
 const WS: Record<string, string> = { " ": "·", "\n": "⏎", "\t": "⇥", "\r": "⏎" };
 
 function tokenNode(tok: Token): HTMLElement {
@@ -173,7 +173,7 @@ async function recompute() {
   }
 }
 
-// ── events ──────────────────────────────────────────────────
+// events
 let debounce: number | undefined;
 input.addEventListener("input", () => {
   clearTimeout(debounce);
@@ -190,6 +190,6 @@ function setView(v: View) {
 $("view-text").addEventListener("click", () => setView("text"));
 $("view-ids").addEventListener("click", () => setView("ids"));
 
-// ── boot ────────────────────────────────────────────────────
+// boot
 input.value = SAMPLE;
 recompute();

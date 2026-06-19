@@ -5,7 +5,7 @@ import type { Tokenizer } from "./types";
 // The legacy, publicly released Claude tokenizer.
 //
 // IMPORTANT: Anthropic does not publish a tokenizer for current Claude models
-// (Claude 3 and later) — see claude-api.ts for exact counts on those. This vocab
+// (Claude 3 and later), see claude-api.ts for exact counts on those. This vocab
 // (shipped in @anthropic-ai/tokenizer as claude.json) is the older public
 // tokenizer. It's a useful, fully-local approximation and the only one that can
 // show per-token segments, but treat its counts as an estimate for modern models.

@@ -4,7 +4,7 @@ import type { Tokenizer, Token } from "./types";
 
 // Both OpenAI's encodings and Claude's legacy tokenizer ship as the same
 // "tiktoken" rank format: { bpe_ranks, special_tokens, pat_str }. js-tiktoken's
-// pure-JS Tiktoken class loads any of them — no WebAssembly, no build hacks.
+// pure-JS Tiktoken class loads any of them, no WebAssembly, no build hacks.
 //
 // To add another BPE model later you only need its rank JSON: write a one-line
 // adapter that calls fromTiktoken() with a loader for that JSON. That's it.

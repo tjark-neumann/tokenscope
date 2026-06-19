@@ -15,7 +15,7 @@ export const charTokenizer: Tokenizer = {
       tokens: points.map((ch) => ({ id: ch.codePointAt(0) ?? null, text: ch })),
       count: points.length,
       exact: true,
-      note: "One token per character — a demo, not a real model tokenizer.",
+      note: "One token per character. A demo, not a real model tokenizer.",
     };
   },
 };

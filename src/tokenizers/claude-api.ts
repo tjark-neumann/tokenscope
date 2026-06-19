@@ -52,7 +52,7 @@ export const claudeApiTokenizer: Tokenizer = {
       tokens: [],
       count: data.input_tokens,
       exact: true,
-      note: `Exact for ${getModel()} — count only, the endpoint returns no per-token segments.`,
+      note: `Exact for ${getModel()}. Count only; the endpoint returns no per-token segments.`,
     };
   },
 };

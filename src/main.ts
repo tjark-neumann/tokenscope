@@ -15,48 +15,55 @@ let view: View = "text";
 // ── build the DOM ───────────────────────────────────────────
 const app = document.querySelector<HTMLDivElement>("#app")!;
 app.innerHTML = `
-  <header>
+  <header class="masthead">
     <h1 class="wordmark">tokenscope</h1>
-    <p class="tagline">See how text becomes tokens. Switch the model; the breakdown follows.</p>
+    <p class="tagline">See how text becomes tokens. Switch the model and the breakdown follows.</p>
   </header>
 
   <div class="controls">
-    <label class="field">Model
+    <label class="field">
+      <span class="field-label">Model</span>
       <select id="model"></select>
     </label>
-    <label class="field">View
+    <div class="field">
+      <span class="field-label">View</span>
       <span class="seg" role="group" aria-label="Token view">
         <button id="view-text" aria-pressed="true">text</button>
         <button id="view-ids" aria-pressed="false">ids</button>
       </span>
-    </label>
-    <div class="settings" id="settings">
-      <label class="field">Anthropic API key
-        <input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off" />
-      </label>
-      <label class="field">Model id
-        <input id="api-model" type="text" placeholder="claude-opus-4-8" />
-      </label>
-      <span class="hint">Key stays in your browser. Direct browser calls expose it — use a throwaway key or a proxy.</span>
     </div>
+  </div>
+
+  <div class="settings" id="settings">
+    <label class="field">
+      <span class="field-label">Anthropic API key</span>
+      <input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off" />
+    </label>
+    <label class="field">
+      <span class="field-label">Model id</span>
+      <input id="api-model" type="text" placeholder="claude-opus-4-8" />
+    </label>
+    <span class="hint">Key stays in your browser. Direct browser calls expose it, so use a throwaway key or a proxy.</span>
   </div>
 
   <textarea id="input" spellcheck="false" aria-label="Text to tokenize"></textarea>
 
-  <div class="stats">
-    <span class="stat primary"><span class="num" id="n-tokens">0</span><span class="lbl">tokens</span></span>
-    <span class="stat"><span class="num" id="n-chars">0</span><span class="lbl">characters</span></span>
-    <span class="stat"><span class="num" id="n-ratio">0</span><span class="lbl">chars / token</span></span>
-    <span class="badge" id="badge"></span>
+  <div class="readout">
+    <div class="stats">
+      <span class="stat primary"><span class="num" id="n-tokens">0</span><span class="lbl">tokens</span></span>
+      <span class="stat"><span class="num" id="n-chars">0</span><span class="lbl">characters</span></span>
+      <span class="stat"><span class="num" id="n-ratio">0</span><span class="lbl">chars / token</span></span>
+      <span class="badge" id="badge"></span>
+    </div>
+    <p class="note" id="note"></p>
   </div>
-  <p class="note" id="note"></p>
 
   <div class="tokens" id="tokens"></div>
 
   <footer>
     Built on <a href="https://github.com/dqbd/tiktoken" target="_blank" rel="noopener">js-tiktoken</a>
     and Anthropic's public legacy tokenizer. Add your own model in
-    <code>src/tokenizers/</code> — see the README.
+    <code>src/tokenizers/</code>. See the README.
   </footer>
 `;
 
@@ -150,7 +157,7 @@ async function recompute() {
       const e = document.createElement("span");
       e.className = "empty";
       e.textContent = text
-        ? "This tokenizer reports a count only — no per-token segments."
+        ? "This tokenizer reports a count only. No per-token segments."
         : "Type something above.";
       tokensEl.appendChild(e);
       return;

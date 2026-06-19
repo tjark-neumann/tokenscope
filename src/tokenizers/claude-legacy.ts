@@ -17,7 +17,7 @@ export const claudeLegacyTokenizer: Tokenizer = fromTiktoken({
   normalize: true,
   allowSpecial: true,
   exact: false,
-  note: "Legacy tokenizer — approximate for Claude 3+. Use the API option for exact counts.",
+  note: "Legacy tokenizer. Approximate for Claude 3+; use the API option for exact counts.",
   loadRanks: () =>
     import("@anthropic-ai/tokenizer/claude.json").then(
       (m) => (m.default ?? m) as unknown as TiktokenBPE,
